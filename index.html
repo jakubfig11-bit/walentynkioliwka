@@ -31,7 +31,6 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* subtle glow */
 body::before {
     content: "";
     position: fixed;
@@ -223,7 +222,7 @@ button:hover {
 </div>
 
 <div class="card" id="card">
-    <h1 class="fade">Zostaniesz moją walentynką? 💖</h1>
+    <h1 class="fade">💖 Zostaniesz moją walentynką? 💖</h1>
     <div class="buttons fade">
         <button id="yes">TAK 💕</button>
         <button id="no">NIE 😥 </button>
@@ -244,7 +243,6 @@ const noBtn = document.getElementById("no");
 const yesBtn = document.getElementById("yes");
 const gallery = document.getElementById("gallery");
 
-/* OTWIERANIE KOPERTY */
 envelope.addEventListener("click", () => {
     envelope.classList.add("open");
     setTimeout(() => {
@@ -253,7 +251,6 @@ envelope.addEventListener("click", () => {
     }, 750);
 });
 
-/* UCIEKAJĄCE NIE */
 function moveNo() {
     noBtn.style.transform =
         `translate(${Math.random()*200-100}px, ${Math.random()*200-100}px)`;
@@ -261,7 +258,6 @@ function moveNo() {
 noBtn.addEventListener("mouseenter", moveNo);
 noBtn.addEventListener("touchstart", moveNo);
 
-/* TAK */
 yesBtn.addEventListener("click", () => {
     card.innerHTML = `
         <h1 class="fade">💘 YEEEEEEEEEEAA! Kocham Cię 💘</h1>
@@ -276,12 +272,14 @@ yesBtn.addEventListener("click", () => {
             <h1 class="fade">🌹 Randka? 🌹</h1>
             <p class="fade">14 lutego, godz. 18:00</p>
             <p class="fade">📍 Japan Sun Sushi 🍣</p>
-            <p class="fade">— jakup :p </p>
+            <p class="fade">— jakup :p</p>
+            <p class="fade" style="font-size:12px; opacity:0.7; margin-top:6px;">
+                Jeśli się zgadzasz, daj mi buziaka 😘
+            </p>
         `;
     }, 2500);
 });
 
-/* SERCA + WIADOMOŚĆ */
 function startHearts() {
     setInterval(() => {
         const heart = document.createElement("div");
@@ -296,7 +294,6 @@ function startHearts() {
     }, 420);
 }
 
-/* KONFETTI */
 function startConfetti() {
     for(let i=0;i<140;i++){
         const c = document.createElement("div");
@@ -309,12 +306,11 @@ function startConfetti() {
     }
 }
 
-/* LICZNIK */
 const startDate = new Date("2025-02-02");
 setInterval(() => {
     const days = Math.floor((new Date()-startDate)/(1000*60*60*24));
     document.getElementById("counter").innerText =
-        `Jestem najszczęśliwszym chłopakiem na świecie od ${days} dni.`;
+        `Jesteśmy razem już ${days} dni. 😎`;
 },1000);
 </script>
 
